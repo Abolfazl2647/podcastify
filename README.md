@@ -95,8 +95,8 @@ all service like axios.
 # store
 
 redux store is here.
-i try to use redux for global purposes. fortunately the was simple and its no complicated.
-maybe it can get complicated in future use.
+i try to use redux for global purposes. fortunately it was simple and its no complicated.
+maybe it can get complicated in future use so this better to have one that not at all.
 
 # utils
 
