@@ -24,8 +24,8 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+-   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
@@ -34,3 +34,72 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+### Documentation
+
+this project built using the follwing libs as you can find them in `package.json`
+
+`axios`, `tanstack-query`, `typescript`, `redux/tookit`, `context-api`, `createPortl`.
+
+## Folder Structor
+
+# api
+
+this folder has all the api required to request data from the server
+it has podcasts, posts and auth folders conresponding each endpoint
+
+# app
+
+app the routing and main components and live in this section
+we have route group for `/panel` including
+
+`/` for login page
+`/books` for login posts page
+`/podcasts` for products page
+
+# components
+
+all ui peaces live in this folder including modal, tab, global card or buttons and etc.
+
+`tabs` component in this section using React Context api to provide capsulating logic which is very good for
+developers who tired of create and using `useState` hand handling `activeIndex` to makes the currnet tab active.
+
+`modal` this component powered by `createPortal` feature of react. we do this to achive the animation boundaries of
+modal opening and closing.
+
+# config
+
+all the config of the website such as list of menu.
+
+# hooks
+
+all global hooks including some custom hooks that help us using the `tanstack-query` hooks in very much cleaner way.
+
+# icons
+
+some icons and previusly build using `svgr` library with cli command.
+
+# layout
+
+main building block of website such as `Header`, `Footer`, `Aside`.
+
+# modules
+
+this folder is a bit tricky.
+this component is similar to `components` folder bug includes a major component that ca act like complex UI
+that consider important part of the UI. like player they kinda give meaning to UI they nor consider `components` neither `page`.
+
+# service
+
+all service like axios.
+`axios` service works like a middleware for all requests and if `refreshToken` expires it automaticaly update the `refreshToekn` the re-fetch the faild requests.
+
+# store
+
+redux store is here.
+i try to use redux for global purposes. fortunately the was simple and its no complicated.
+maybe it can get complicated in future use.
+
+# utils
+
+only helper `function`
